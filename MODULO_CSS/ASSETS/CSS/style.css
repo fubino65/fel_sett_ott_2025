@@ -1,0 +1,61 @@
+h1,
+h2,
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+  color: red;
+  /* text-align: center; */
+}
+
+h2 {
+  color: purple;
+}
+
+h2#secondoP {
+  /* # seleziona tutti gli h2 che hanno l'id=secondoP */
+  color: greenyellow;
+}
+
+#secondoP {
+  /* # seleziona per id */
+  color: fuchsia;
+}
+.rounded40 {
+  border-radius: 40px;
+}
+.rounded20 {
+  border-radius: 20px;
+}
+
+input {
+  background-color: aqua;
+}
+
+[type='email'] {
+  /*selezione per attributo []*/
+  outline-color: blue;
+}
+img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+p {
+  background-color: lightpink;
+}
+
+section p {
+  /*tutti i p discendenti di una qualsiasi section  */
+  background-color: lightskyblue;
+}
+
+section > p {
+  /*tutti i p figli diretti di una qualsiasi section  */
+  background-color: lightgray;
+}
+
+.bordato {
+  border: 5px solid yellow;
+}

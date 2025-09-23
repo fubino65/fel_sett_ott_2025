@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio liste e formattazione html</title>
+</head>
+
+<body>
+    <h1>COME SI FORMATTANO I TESTI IN HTML</h1>
+
+    <ul>
+        <li>
+            <h2>Le formattazioni più usate</h2>
+
+            <!-- GRASSETTO -->
+            <ol>
+                <li>
+                    <h3>Grassetto</h3>
+                    <p>testo in paragrafo <strong>con grassetto</strong>(tag strong -> stile logico)</p>
+                    <p>testo in paragrafo <b>con grassetto</b>(tag b -> stile fisico)</p>
+                </li>
+                <!-- CORSIVO -->
+                <li>
+                    <h3>Corsivo</h3>
+                    <p>testo in paragrafo <em>con carattere corsivo</em>(tag em -> stile logico) </p>
+                    <p>testo in paragrafo <i>con carattere corsivo</i>(tag i -> stile fisico)</p>
+                </li>
+                <!-- SOTTOLINEATO -->
+                <li>
+                    <h3>Sottolineato</h3>
+                    <h4>In realtà il testo sottolineato servirebbe a segnalare che il testo è stato inserito
+                        successivamente.</h4>
+                    <p>testo in paragrafo <ins> sottolineato</ins>(tag ins -> stile logico) </p>
+                    <p>testo in paragrafo <u> sottolineato</u>(tag u -> stile fisico) </p>
+                </li>
+                <!-- BARRATO -->
+                <li>
+                    <h3>Barrato</h3>
+                    <p> testo in paragrafo <del>barrato</del>(tag del -> stile logico)</p>
+                </li>
+
+            </ol>
+        </li>
+        <li>
+            <h2>Le formattazioni meno frequenti</h2>
+
+            <ol>
+                <!-- SIGLE DECODIFICA -->
+                <li>
+                    <h3>Decodifica delle sigle</h3>
+                    <p><abbr title="Hypertext Markup Language">HTML</abbr> è un linguaggio di markup (tag abbr +
+                        attributo
+                        title che specifica il significato della sigla) </p>
+                </li>
+                <!-- APICI     -->
+                <li>
+                    <h3>Apici</h3>
+                    <p>due al quadrato si scrive 2<sup>2</sup> (tag sup)</p>
+                </li>
+                <!-- PEDICI -->
+                <li>
+                    <h3>Pedici</h3>
+                    <p>la formula dell'acqua è H<sub>2</sub>O (tag sub)</p>
+                </li>
+        </li>
+    </ul>
+    <hr>
+    <h3>Nota che le formattazioni possono essere accostate e annidate fra di loro</h3>
+    <!-- N.B. LE FORMATTAZIONI POSSONO ESSERE ACCOSTATE E ANNIDATE FRA DI LORO -->
+    <p>la formula dell'acqua è <strong> H<sub>2</sub>O</strong> (tag sub)</p>
+    <p>testo in paragrafo <strong><ins><em>grassettato sottolineato e in corsivo</em></ins></strong></p>
+</body>
+
+</html>

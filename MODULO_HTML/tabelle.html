@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabelle</title>
+    </head>
+
+    <body>
+        <h1>Le tabelle</h1>
+        <h2>Struttura minimale</h2>
+        <table border><!--tag contenitore-->
+            <tr><!--riga (table row)-->
+                <td>cella 1</td><!--cella (table data)-->
+                <td>cella 2 super larga</td>
+                <td>cella 3</td>
+            </tr>
+            <tr>
+                <td>cella 1.1 larghina</td>
+                <td>cella 2.1</td>
+                <td>cella 3.1</td>
+            </tr>
+            <tr>
+                <td>cella 1.2 larghina</td>
+                <td>cella 2.2</td>
+                <td>cella 3.2</td>
+            </tr>
+        </table>
+
+        <h2>Struttura semplice con intestazioni e titolo</h2>
+        <table border>
+            <caption>
+                <!--titolo centrato. Lo posso scrivere in un punto qualsiasi della tabella ma viene sempre posizionato in alto-->
+                Titolo della tabella
+            </caption>
+            <tr>
+                <th>Instest.1</th><!--intestazione (table heading)-->
+                <th>Instest.2</th>
+                <th>Instest.3</th>
+            </tr>
+            <tr>
+                <td>cella 1</td>
+                <td>cella 2</td>
+                <td>cella 3</td>
+            </tr>
+            <tr>
+                <td>cella 1.1</td>
+                <td>cella 2.1</td>
+                <td>cella 3.1</td>
+            </tr>
+            <tr>
+                <td>cella 1.2</td>
+                <td>cella 2.2</td>
+                <td>cella 3.2</td>
+            </tr>
+        </table>
+
+        <h2>Struttura completa con thead, tbody, tfoot</h2>
+        <table border>
+            <caption>Titolo tabella</caption>
+            <thead>
+                <tr>
+                    <th>Instest.1</th>
+                    <th>Instest.2</th>
+                    <th>Instest.3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cella 1</td>
+                    <td>cella 2</td>
+                    <td>cella 3</td>
+                </tr>
+                <tr>
+                    <td>cella 1.1</td>
+                    <td>cella 2.1</td>
+                    <td>cella 3.1</td>
+                </tr>
+                <tr>
+                    <td>cella 1.2</td>
+                    <td>cella 2.2</td>
+                    <td>cella 3.2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>risultato celle</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>Uso dell'attributo colspan (si applica a th e td in orizzontale)</h2>
+        <table border>
+            <caption>Università di TF</caption>
+            <thead>
+                <tr>
+                    <th colspan="4">Studenti</th>
+                </tr>
+                <tr>
+                    <!-- <th>Nome</th>
+                    <th>Cognome</th> -->
+                    <th colspan="2">Anagrafica</th>
+                    <th>Matricola</th>
+                    <th>Falcoltà</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pinco Francesco Maria</td>
+                    <td>Pallino</td>
+                    <td>1234567</td>
+                    <td>Giurisprudenza</td>
+                </tr>
+                <tr>
+                    <td>Mario</td>
+                    <td>Rossi</td>
+                    <td>5842265</td>
+                    <td>Ingegneria</td>
+                </tr>
+                <tr>
+                    <td>Pinca</td>
+                    <td>Pallino</td>
+                    <td>64646465</td>
+                    <td>Medicina</td>
+                </tr>
+                <tr>
+                    <td>Giosuè</td>
+                    <td>Barile</td>
+                    <td>5587441</td>
+                    <td>Giurisprudenza</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <h2>Uso dell'attributo rowspan (si applica a th e td in verticale)</h2>
+
+        <table border>
+            <caption>Registro 2 Ippia</caption>
+            <thead>
+                <tr>
+                    <th colspan="2">Nome e Cognome</th>
+                    <th>Materia</th>
+                    <th>Voto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">Marta</td>
+                    <td rowspan="3">Gilarska</td>
+                    <td>Matematica</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <!-- <td>Marta</td> -->
+                    <!-- <td>Gilarska</td> -->
+                    <td>Italiano</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <!-- <td>Marta</td> -->
+                    <!-- <td>Gilarska</td> -->
+                    <td>Laboratorio</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">Giacomo</td>
+                    <td rowspan="4">Vitta</td>
+                    <td>Italiano</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <!-- <td>Giacomo</td>
+                    <td>Vitta</td> -->
+                    <td>Storia</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <!-- <td>Giacomo</td>
+                    <td>Vitta</td> -->
+                    <td>Matematica</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <!-- <td>Giacomo</td>
+                    <td>Vitta</td> -->
+                    <td>Inglese</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Un esempio concreto</h2>
+        <table border>
+            <caption>Vendite trimestrali per area geografica</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>1 trim</th>
+                    <th>2 trim</th>
+                    <th>3 trim</th>
+                    <th>4 trim</th>
+                    <th>Tot. annuale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Nord</th>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <th>Centro</th>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <th>Sud</th>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th>Isole</th>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <th>Tot. Trimestr.</th>
+                    <td>61</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>221</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
+</html>

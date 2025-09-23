@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liste</title>
+    </head>
+
+    <body>
+        <h1>LE LISTE</h1>
+
+        <!-- LISTE NON ORDINATE -->
+        <h2>Liste non ordinate (tag ul)</h2><!--unordered list-->
+        <ul><!--tag contenitore. I figli di ul devono sempre essere dei li-->
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+            <li>elemento 4</li>
+            <li>elemento 5</li>
+        </ul>
+
+        <!-- LISTE ORDINATE -->
+        <h2>Liste ordinate</h2><!--ordered list-->
+        <ol type="a" reversed><!--tag contenitore. I figli di ol devono sempre essere dei li-->
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+            <li>elemento 4</li>
+            <li>elemento 5</li>
+        </ol>
+
+        <!-- LISTE DEFINIZIONE -->
+        <h2>Liste di definizione</h2>
+        <dl><!--tag contenitore definition list. I figli di dl devono sempre essere dt o dd-->
+            <dt>HTML</dt><!-- definition term-->
+            <dd>Hypertext Markup Language</dd><!-- definition description-->
+            <dd>Il linguaggio standard per la creazione di pagine web</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+            <dd>Linguaggio per la definizione dello stile delle pagine web</dd>
+        </dl>
+
+        <!-- LISTE ANNIDATE -->
+        <h2>Esempio di liste annidate</h2>
+        <h3>I tipi di musica</h3>
+        <dl>
+            <dt>Rock</dt>
+            <dd>Genere musicale derivato dal rock'n roll. I migliori del rock:
+                <ol>
+                    <li>Queen
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                    <li>AC/DC
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                    <li>Guns n'roses
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                </ol>
+            </dd>
+            <dt>Metal Rock</dt>
+            <dd>
+                Genere musicale rock caratterizzato da suoni potenti e aggressivi.I migliori del metal rock:
+                <ol>
+                    <li>Kipelov
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                    <li>Metallica
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                    <li>Cannibal Corpse
+                        <ul>
+                            <li>Canzone 1</li>
+                            <li>Canzone 2</li>
+                            <li>Canzone 3</li>
+                        </ul>
+                    </li>
+                </ol>
+            </dd>
+        </dl>
+    </body>
+
+</html>

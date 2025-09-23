@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+    </head>
+
+    <body>
+        <h1>I form</h1>
+        <h2>Modulo di iscrizione al corso xyz</h2>
+        <!-- metodo get -> passaggio parametri in chiaro nella url (sconsigliatissimo) -->
+        <!-- metodo post -> passaggio parametri criptati (usato il 99% dei casi) -->
+
+        <!-- Sito per testare l'invio del form  https://httpbin.org/post oppure https://httpbin.org/get-->
+
+
+        <!-- <form action="" method="get" novalidate> -->
+        <form action="" method="post" novalidate>
+            <input type="hidden" name="from" value="paginax">
+            <input type="hidden" name="nomeCorso" value="xyz">
+            <!--Annulla tutte le restrizioni di validazione impostate tipo required, controllo email....-->
+            <!--Se valorizziamo la action con "" (stringa vuota) richiamiamo la pagina stessa-->
+            <fieldset>
+                <legend>Dati personali</legend>
+                <div>
+                    <!--Il div ci serve per raggruppare i campi che ci interessano considerando che tutti i campi di tipo input sono inline. Quindi tutto ciò che segue sarà disposto su una nuova riga -->
+                    <label
+                        for="nome">Nome</label><!--Il for deve essere valorizzato con l'id del campo a cui si riferisce -->
+                    <input type="text" name="firstName" id="nome" placeholder="Il tuo nome" autofocus required>
+                    <label for="cognome">Cognome</label>
+                    <input type="text" name="cognome" id="cognome" placeholder="Il tuo cognome" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="La tua migliore email" required>
+                    <label for="pwd">Password</label>
+                    <input type="password" name="pwd" id="pwd">
+                </div>
+                <div>
+                    <label for="eta">Età</label>
+                    <input type="number" name="eta" id="eta" min="18" max="30">
+                    <label for="nascita">Data di nascita</label>
+                    <input type="date" name="nascita" id="nascita">
+                    <label for="tel">Tel.</label>
+                    <input type="text" name="tel" id="tel">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Preferenze Corso</legend>
+                <div>
+                    <span>Scegli livello</span>
+                    <br>
+                    <!-- I radio buttons sono mutuamente esclusivi. Questo è reso possibile dal fatto che condividono lo stesso name. Se metto name diversi non saranno più legati fra di loro -->
+                    <input type="radio" name="livello" id="base"
+                        value="b"><!--Il value mi permette di sapere quale button è stato selezionato altrimenti vedrei soltanto name=on nel caso di selezione oppure non vedrei niente nel caso di nessuna selezione-->
+                    <label for="base">Base</label>
+                    <input type="radio" name="livello" id="intermedio" value="i">
+                    <label for="intermedio">Intermedio</label>
+                    <input type="radio" name="livello" id="avanzato" value="a">
+                    <label for="avanzato">Avanzato</label>
+                    <!-- Per rendere obbligatoria la scelta di una opzione basta aggiungere required a uno dei tre radio -->
+                    <!--Per preselezionare un radio aggiungiamo checked -->
+                </div>
+                <div>
+                    <span>A quali linguaggi sei interessato?</span>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="html" value="html" checked>
+                    <label for="html">HTML</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="css" value="css" checked>
+                    <label for="css">CSS</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="js" value="js">
+                    <label for="js">Javascript</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="php" value="php">
+                    <label for="php">PHP</label>
+                </div>
+                <div>
+                    <!-- MENU A TENDINA A SCELTA SINGOLA -->
+                    <label for="giorno">Giorno preferito</label>
+                    <br>
+                    <select name="giorno" id="giorno">
+                        <option value="">Scegli un giorno</option>
+                        <!-- E' consigliabile prevedere una option vuota in modo tale che la scelta dell'utente sia consapevole -->
+                        <option value="lu">Lunedì</option>
+                        <option value="ma">Martedì</option>
+                        <option value="me">Mercoledì</option>
+                        <option value="gio">Giovedì</option>
+                        <option value="ve">Venerdì</option>
+                        <option value="sa">Sabato</option>
+                    </select>
+                    <!-- Importante ricordare che il valore passato è quello definito in value non quello che viene visualizzato nella select -->
+                    <!-- Per preselezionare una option usare selected -->
+                </div>
+                <!-- MENU A TENDINA A SCELTA MULTIPLA -->
+                <div>
+                    <label for="orario">Fascia Oraria</label>
+                    <br>
+                    <select name="orario" id="orario" multiple
+                        size="1"><!-- size determina quante option devono essere aperte -->
+                        <!-- <option value="">Scegli la fascia oraria</option> -->
+                        <option value="mattina">Mattina 9-12</option>
+                        <option value="pomeriggio">Pomeriggio 14-17</option>
+                        <option value="sera">Sera 19-22</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Note</legend>
+                <label for="note">Scrivi eventuali note</label>
+                <br>
+                <textarea name="note" id="note" placeholder="scrivi tutto quello che ti viene in mente" cols="50"
+                    rows="10">
+                </textarea>
+            </fieldset>
+            <input type="submit" value="Iscriviti">
+            <!-- <button>Iscriviti</button>
+            -->
+            <!-- <button type="submit"></button> -->
+            <input type="reset" value="Svuota campi">
+        </form>
+        <!-- per disabilitare un campo attr disabled -->
+        <!-- per rendere in sola lettura un campo (generalmente già valorizzato) attr readonly -->
+    </body>
+
+</html>

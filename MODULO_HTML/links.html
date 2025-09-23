@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>links</title>
+    </head>
+
+    <body>
+        <h1>Inserimento di link</h1>
+        <h2>Tag a con attributo href per indicare la risorsa che si vuole caricare. I link sono elementi di tipo inline
+        </h2>
+        <ul>
+            <li id="primoLink">
+                <h3>Link che porta a una pagina interna del progetto aprendola nella stessa scheda del
+                    browser</h3>
+                <a href="immagini.html">pagina immagini</a>
+            </li>
+            <li>
+                <h3>Link che porta a una pagina interna del progetto aprendola in una nuova scheda del browser
+                    (attributo target="_blank")</h3>
+                <a href="headings.html" target="_blank">Titoli h1-h6</a>
+                <a href="liste.html" target="_blank">Liste</a>
+            </li>
+            <li>
+                <h3>Link che puntano a una pagina esterna al progetto</h3>
+                <p>Acquista <a
+                        href="https://www.google.com/aclk?sa=L&ai=DChsSEwi19frL7OGPAxUap4MHHY8-AIIYACICCAEQCRoCZWY&co=1&ase=2&gclid=Cj0KCQjw267GBhCSARIsAOjVJ4EJjOPJPL0aIgznEAF8LBXEzVO73sTcqkbsO1mKa98f2RY5v7alQvAaAgJuEALw_wcB&cce=2&category=acrcp_v1_32&sig=AOD64_3aOz_eX9NIckjInSdOihfIHmchzA&ctype=5&q=&nis=4&ved=2ahUKEwjJrfTL7OGPAxW8_rsIHYfhI7cQ9aACKAB6BAgEEBI&adurl="
+                        target="_blank">
+                        "La vita segreta dei pesci"</a></p>
+            </li>
+            <li>
+                <h3>Link che ricarica la pagina (href="#")</h3>
+                <a href="#">Ricarica la pagina</a>
+            </li>
+            <li>
+                <h3>Link che riporta all'inizio della pagina (href="#top")</h3>
+                <a href="#top">
+                    <img src="ASSETS/MEDIA/aiga_uparrow_inv-64.webp" alt="" width="20px">Torna su
+                </a>
+            </li>
+            <li>
+                <h3>Link bookmark o segnaposto(href="#nomeId")</h3>
+                <!-- Se per esempio voglio spostarmi nella sezione del primo link PRIMA devo aggiungere al titolo del primo link un attributo id="nomeId" POI nell'href del link scriverò href="#nomeId" dove nomeID è un valore arbitrario che scelgo io. Ricorda che i valori di id non possono essere ripetuti nella stessa pagina -->
+                <a href="#primoLink">Vai al primo link</a>
+                <!-- Posso anche richiamare una sezione di un'altra pagina interna o esterna scrivendo nell'href l'url seguita da #nomeId -->
+                <a href="headings.html#titolo4" target="_blank">Titolo 4</a>
+            </li>
+            <li>
+                <h3>Link che permette di chiamare direttamente un numero telefonico (href="tel:+3922222222")</h3>
+                <a href="tel:+393406405152">Chiama Fulvia</a>
+            </li>
+            <li>
+                <h3>Link che permette di aprire il client di posta predefinito con destinatario/i già impostato/i
+                    (href ="mailto:fubino@gmail.com, pippo@gmail.com")</h3>
+                <a href="mailto:pippo@gmail.com">Scrivi a Fulvia</a>
+            </li>
+            <li>
+                <h3>Link che permette di avviare una chat di whatsapp (href="https://wa.me/numeroDiTelefono")</h3>
+                <a href="https://wa.me/+393406405152">Chatta con Fulvia</a>
+            </li>
+            <li>
+                <h3>Apertura di un file</h3>
+                <!-- apre il file nel browser -->
+                <a href="ASSETS/MEDIA/pesce-rosso-pict.svg" target="_blank">Scarica immagine</a>
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" target="_blank">scarica risorsa pfd</a>
+            </li>
+            <li>
+                <h3>Effettuare il download di un file (attributo download)</h3>
+                <!-- Se metto solo download scarica il file o apre la finestra sfoglia a seconda delle impostazioni del browser mantenendo il nome originario del file-->
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" download>scarica risorsa pfd</a>
+                <!-- Se valorizzo l'attr download con un nome che scelgo io per il file funziona come sopra ma scarica o preimposta il nome del file con quello scelto e non con quello originale -->
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" download="SuperGuidaUX-UI">scarica la super guida</a>
+            </li>
+        </ul>
+
+    </body>
+
+</html>
