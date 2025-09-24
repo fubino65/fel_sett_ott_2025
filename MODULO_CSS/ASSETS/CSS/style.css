@@ -33,9 +33,17 @@ input {
   background-color: aqua;
 }
 
+input:focus {
+  background-color: white;
+}
+
 [type='email'] {
   /*selezione per attributo []*/
   outline-color: blue;
+}
+
+[for='pwd'] {
+  color: rgb(78, 47, 255);
 }
 img {
   width: 300px;
@@ -58,4 +66,13 @@ section > p {
 
 .bordato {
   border: 5px solid yellow;
+}
+
+h1.bordato:hover {
+  border-color: purple;
+}
+
+.bordato:hover {
+  /*:hover pseudoclasse le cui regole vengono applicate solo quando il mouse passa sull'elemento che risponde al criterio di selezione*/
+  border-color: red;
 }
