@@ -1,0 +1,53 @@
+#container1 {
+  border: 1px solid #000;
+  text-align: center; /*allinea al centro tutto il contenuto del container*/
+
+  /* PADDING */
+  /* sintassi esplosa */
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* sintassi shorthand top/bottom right/left */
+  padding: 20px 50px;
+  /* sintasi shorthand top right bottom left */
+  padding: 20px 50px 0 50px;
+  /* sintassi unico valore */
+  padding: 50px;
+
+  /* MARGIN */
+  /* vale la stessa sintassi usata per padding */
+  margin-bottom: 100px;
+  margin: 100px;
+  margin: 50px 20px 100px 80px;
+  margin: 50px 100px;
+}
+
+#container1 span {
+  text-align: center;
+}
+
+#container1 p {
+  /* border: 1px solid #000; */
+  margin-top: 100px;
+  padding: 15px;
+  text-align: start;
+  background-color: aqua;
+}
+
+#containerCb,
+#containerBb {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 50px;
+  /* width: 400px; */
+}
+
+#containerCb img,
+#containerBb img {
+  width: 300px;
+}
+
+#containerBb {
+  /* L'unica differenza rispetto al contenitore containerCb è la proprietà box-sizing. Se = content-box il padding e il border vengono aggiunti alle dimensioni dell'elemento. Se = border-box le dimensioni dell'elemento rimangono fisse e viene compresso il contenuto. N.B. questa differenza si ha solo perchè è stata fissata la larghezza a 400px. */
+  box-sizing: border-box;
+}
