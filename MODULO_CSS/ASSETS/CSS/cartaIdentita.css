@@ -1,0 +1,101 @@
+/* RESET: annullo  per tutta la pagina margini e padding del foglio di stile del browser e imposto box-sizing: border-box*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh; /* 100wh = 100% dell'altezza del viewport (viewport height) */
+  background-color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  /* imposto a livello di body il font principale del testo della pagina */
+}
+
+#card {
+  /* contenitore esterno */
+  width: 35%; /* 35% della larghezza del contenitore padre (body) */
+  margin: 25vh auto; /* 25vh = 25% dell'altezza del viewport  auto->centra rispetto alla larghezza */
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#container-content {
+  /* contenitore interno */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+header {
+  background-color: blue;
+  border-radius: 10px 10px 0 0;
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+  /* le ultime due righe danno lo stesso risultato di quella precedente */
+}
+
+header h1 {
+  text-align: center;
+  font-size: 23px; /* determina l'altezza del carattere */
+  padding: 10px 0;
+  color: white;
+}
+
+#personal-info {
+  /*sezione sotto l'header*/
+  width: 100%; /*la percentuale è relativa alla larghezza di container-content che è il padre*/
+  padding: 20px 0;
+}
+#avatar,
+#details {
+  display: inline-block;
+}
+/* avatar e details essendo due elementi di tipo blocco andrebbero di default uno sotto l'altro. Per affiancarli li rendo di tipo inline-block */
+
+#avatar {
+  width: 100px;
+  height: 130px;
+  border: 2px solid green;
+  background-color: lightgray;
+  margin-left: 20px;
+  font-size: 12px;
+  font-weight: 700; /*spessore del carattere. sopra il 500 è grassetto o supergrassetto, sotto è sottile o supersottile*/
+}
+
+#avatar:hover {
+  background-color: rgb(100, 100, 100);
+  font-size: 18px;
+}
+
+#avatar p {
+  text-align: center;
+  line-height: 130px; /*imposto l'altezza della linea (che non è l'altezza del carattere) uguale all'altezza del contenitore (avatar). In questo modo il testo risulta centrato verticalmente perchè il testo è sempre centrato verticalmente rispetto al proprio line-height*/
+  color: black;
+}
+
+#details {
+  margin-left: 30px;
+}
+
+#details p {
+  margin-bottom: 10px;
+}
+
+.blue-p {
+  color: blue;
+  font-weight: 700;
+}
+
+#document-info {
+  font-size: 16px; /*16 se non specificato altrimenti è l'altezza di default del carattere di una pagina*/
+  background-color: lightgray;
+  padding: 10px 0;
+  border-radius: 0 0 10px 10px;
+}
+
+#document-info p {
+  text-align: right;
+  margin: 0 20px 0 0;
+}
