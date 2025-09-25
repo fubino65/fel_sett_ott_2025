@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px; /*font size a cui fanno riferimento i rem */
+}
+body {
+  font-size: 20px;
+}
+#container1 {
+  /* font-size: 30px; */
+  border: 2px solid red;
+  padding: 1.5em; /*si riferisce al font-size del contenitore padre = 30px */
+  /* padding: 1.5rem;  si riferisce al font-size di default (se non specificato altrimenti 16px)*/
+  width: 50vw;
+}
+
+#innerInnerSection {
+  border: 2px solid rgb(82, 18, 219);
+  /* font-size: 20px; */
+  /* padding: 2em; */
+  padding: 2rem;
+}
+
+#container2 {
+  border: 2px solid red;
+  height: 50vh;
+}
+
+.quadrato200 {
+  height: 300px;
+  width: 300px;
+  /* border: 2px solid red; */
+  background-color: red;
+}
+
+.quadrato200 img {
+  width: 80%;
+}
