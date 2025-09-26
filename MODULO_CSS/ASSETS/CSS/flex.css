@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  border: 2px solid red;
+  height: 400px;
+  margin-bottom: 20px;
+  display: flex;
+  /* display: flex deve essere assegnata al GENITORE e ha effetto SOLO sui FIGLI (non sui nipoti) */
+
+  /* ASSI PRINCIPALI*/
+  flex-direction: row; /* row asse principale di default orizzontale da sinistra verso destra */
+  flex-direction: column; /* column asse principale verticale top down */
+  flex-direction: row-reverse; /* row reverse asse principale orizzontale da destra verso sinistra*/
+  flex-direction: column-reverse; /* column reverse asse principale verticale  down top*/
+
+  flex-direction: row;
+  /* (DISTANZIAMENTO DEGLI ELEMENTI FRA DI LORO (GAP)si usa per non tenere appiccicati gli elementi con i tre tipi di justify content precedenti) */
+  gap: 20px;
+
+  /* DISPOSIZIONE DEGLI ELEMENTI IN BASE ALL'ASSE PRINCIPALE (justify-content)*/
+  justify-content: flex-start; /*default*/
+  justify-content: flex-end;
+  justify-content: center;
+  gap: 0; /*tolgo il gap perchè influisce sulle distanze fra gli elementi calcolate in automatico*/
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly;
+
+  /* DISPOSIZIONE DEGLI ELEMENTI IN BASE ALL'ASSE SECONDARIO (align-items)*/
+  align-items: flex-start; /*default*/
+  align-items: flex-end;
+  align-items: center;
+  /* align-items: baseline; */
+
+  /* DISTRIBUIRE SU PIU' COLONNE O RIGHE IL CONTENUTO QUANDO SUPERA LE DIMENSIONI DEL CONTENITORE (flex-wrap + align-content) */
+  flex-wrap: nowrap; /*default. Il contenuto viene compresso se più grande del contenitore*/
+  flex-wrap: wrap; /*il contenuto in eccesso rispetto alla dimensioni del contenitore scivola su un'altra riga o colonna*/
+  flex-wrap: wrap-reverse;
+  align-content: center;
+  align-content: flex-end;
+  align-content: flex-start;
+  align-content: space-around;
+  align-content: space-between;
+  align-content: space-evenly;
+}
+
+#container span {
+  order: 1;
+  /* vogliamo che i due testi siano disposti alla fine. Ci basta dare a entrambi order=1. Tutti gli altri hanno order=0 quindi verranno disposti per primi. I due che hanno order 1 verranno disposti dopo  */
+}
+#container2 {
+  border: 2px solid red;
+  height: 200px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: stretch;
+  justify-content: space-around;
+}
+
+#container2 span:nth-child(3) {
+  order: 1;
+  background-color: yellow;
+  /* vogliamo che testo 2 stia prima di box3 */
+}
+
+#container2 div:last-child {
+  /*box3*/
+  background-color: greenyellow;
+  order: 2;
+  /* vogliamo che testo 1 stia dopo box3 */
+}
+
+#container2 span:nth-child(2) {
+  /*testo1*/
+  background-color: red;
+  order: 3;
+  /* vogliamo che testo 1 stia dopo box3 */
+}
+#container3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quadrato {
+  border: 2px solid red;
+  height: 100px;
+  width: 100px;
+}
+
+#container4 {
+  border: 2px solid red;
+  display: flex;
+}
+
+#container4 #box1 {
+  border: 4px solid blue;
+  flex-basis: 30%;
+  flex-grow: 1;
+}
+#container4 #box2 {
+  border: 4px solid blue;
+  /* flex-basis: 60%; */
+}
+
+/* Vogliamo dimostrare la differenza fra usare flex-basis e width in percentuale */
+#container5 {
+  border: 2px solid red;
+  display: flex;
+}
+
+#container5 #box3 {
+  border: 4px solid blue;
+  width: 30%;
+  flex-grow: 1;
+}
+#container5 #box4 {
+  border: 4px solid blue;
+  /* width: 60%; */
+}
