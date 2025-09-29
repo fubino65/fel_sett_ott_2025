@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+#head1 {
+  background-color: #808080;
+  height: 30px;
+}
+#head2 {
+  /* background-color: #000; */
+  background: #efefbb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #d4d3dd, #efefbb); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #d4d3dd,
+    #efefbb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 40px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  -webkit-box-shadow: 3px 5px 6px -1px rgba(21, 17, 19, 0.77);
+  box-shadow: 3px 5px 6px -1px rgba(21, 17, 19, 0.77);
+}
+
+main {
+  padding: 40px;
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+aside {
+  width: 40px;
+  height: 150px;
+  background-color: coral;
+  position: fixed;
+  top: 300px;
+  right: 0;
+  writing-mode: vertical-rl; /*dispone il testo in verticale top down e se ci fossero più righe sarebbeero disposte da destra verso sinistra (rl)*/
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

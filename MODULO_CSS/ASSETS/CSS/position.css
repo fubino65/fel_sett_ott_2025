@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.quadrato {
+  border: 1px solid #000;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#box1 {
+  background-color: red;
+  z-index: -25; /*non ha effetto fintanto che l'elemento ha position static*/
+}
+#box2 {
+  background-color: green;
+  position: relative; /*relativo alla posizione naturale dell'elemento all'interno del flusso del documento*/
+  top: 50px;
+  left: 50px;
+  z-index: -10;
+}
+
+#absoluteAssist {
+  border: 1px solid #000;
+  height: 150px;
+  position: relative; /*serve per far funzionare il position absolute del box3 che altrimenti si posizionerebbe relativamente al viewport*/
+}
+#box3 {
+  background-color: yellow;
+  position: absolute; /*esce dal flusso e si posiziona rispetto al primo antenato posizionato oppure se non c'è rispetto al viewport*/
+  top: 30px;
+  left: 100px;
+  z-index: -20;
+}
+#box4 {
+  background-color: blue;
+  position: fixed;
+  top: 0px;
+  left: 200px;
+  width: 200px;
+}
+
+#box5 {
+  background-color: pink;
+  position: sticky; /*posizionato in modo relativo fino a quando non raggiunge i 40px dal top del vieport*/
+  top: 40px; /*quando raggiunge i 40 px dall'alto rimane fermo*/
+}
