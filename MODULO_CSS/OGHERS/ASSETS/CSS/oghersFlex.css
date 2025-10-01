@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  border: 1px solid #000;
+  padding: 40px var(--boxed-horizontal-padding) 64px var(--boxed-horizontal-padding);
+  font-family: var(--font-secondario);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo h1 a {
+  font-size: 60px;
+  line-height: 72px;
+  text-decoration: none;
+  color: #000;
+}
+#logo span {
+  font-family: var(--font-principale);
+  line-height: 29px;
+}
+
+#menu ul {
+  /* border: 2px solid red; */
+  list-style: none;
+  display: flex;
+
+  gap: 16px;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#icone {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 8px;
+}
+
+#icone a {
+  background: var(--gradient-bkg);
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 0 var(--boxed-horizontal-padding);
+}
+/* EVIDENZA SECTION */
+#evidenzaSection {
+  border: 1px solid #000;
+  padding: 20px;
+}
+
+#evidenzaSection p {
+  font-family: var(--font-secondario);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+#anteprimeSection {
+  /* border: 1px solid #000; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#anteprimeSection article {
+  border: 1px solid #000;
+  flex-basis: 24%;
+  height: 200px;
+  /* proprietà comuni alle immagini di background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#primo {
+  background-image: url(../MEDIA/integratori-per-il-benessere-quotidiano.webp);
+}
+
+#secondo {
+  background-image: url(../MEDIA/Centered_Star_Anise_Blog_Image.jpg);
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+:root {
+  --font-secondario: 'Josefin Sans', sans serif;
+  --font-principale: 'Rubik', sans serif;
+  --gradient-bkg: linear-gradient(90deg, #89216b 0%, #da4453 100%);
+  --boxed-horizontal-padding: 15%;
+}
