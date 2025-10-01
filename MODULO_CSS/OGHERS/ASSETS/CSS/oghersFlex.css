@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+body {
+  font-family: var(--font-principale);
+}
+
 header {
   border: 1px solid #000;
   padding: 40px var(--boxed-horizontal-padding) 64px var(--boxed-horizontal-padding);
@@ -20,7 +24,6 @@ header {
   color: #000;
 }
 #logo span {
-  font-family: var(--font-principale);
   line-height: 29px;
 }
 
@@ -45,7 +48,8 @@ header {
   gap: 8px;
 }
 
-#icone a {
+#icone a,
+#toTop {
   background: var(--gradient-bkg);
   border-radius: 50%;
   text-decoration: none;
@@ -57,7 +61,8 @@ header {
   align-items: center;
 }
 
-main {
+main,
+footer {
   padding: 0 var(--boxed-horizontal-padding);
 }
 /* EVIDENZA SECTION */
@@ -68,7 +73,7 @@ main {
   border-radius: 10px;
   -webkit-box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
   box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
-  margin: 50px 0;
+  margin: 250px 0;
 }
 
 #evidenzaSection p {
@@ -131,7 +136,6 @@ main {
   border-radius: 10px;
 }
 .categoria {
-  font-family: var(--font-principale);
   font-size: 14px;
   background: var(--gradient-bkg);
   padding: 4px 8px;
@@ -142,6 +146,10 @@ main {
   font-family: var(--font-secondario);
   font-size: 18px;
   z-index: 10;
+}
+
+#anteprimeSection article h3:hover {
+  color: var(--titoli--hover);
 }
 
 #primo {
@@ -160,10 +168,65 @@ main {
 #quarto {
   background-image: url(../MEDIA/A_close-up_of_fresh_mint_leaves_beside_a_steaming_.jpeg);
 }
+
+/***************FOOTER **************/
+
+#topFooter {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: #0f1012;
+  color: #fff;
+}
+
+#topFooter span {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: var(--font-secondario);
+}
+#topFooter p {
+  margin-top: 10px;
+}
+
+#bottomFooter {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  color: #bbb;
+}
+
+#bottomFooter nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #bbb;
+}
+
+#toTop {
+  border: 1px solid #000;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+
+footer a:hover {
+  color: var(--titoli--hover);
+}
+#bottomFooter span a:hover {
+  text-decoration: underline;
+}
+
+/* CUSTOM PROPERTIES */
 :root {
   --font-principale: 'Rubik', sans serif;
   --font-secondario: 'Josefin Sans', sans serif;
   --gradient-bkg: linear-gradient(90deg, #89216b 0%, #da4453 100%);
   --boxed-horizontal-padding: 13%;
   --background--color_secondary: #fffaf4;
+  --titoli--hover: #6f1c56;
 }
