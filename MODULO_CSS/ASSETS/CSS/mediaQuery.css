@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  /* font-size: 70px; */
+  font-size: clamp(3.4375rem, 3.0114rem + 1.8182vw, 4.375rem);
+}
+h2 {
+  /* font-size: 50px; */
+  font-size: clamp(2.5rem, 2.2159rem + 1.2121vw, 3.125rem);
+}
+
+/* PRIMI MEDIATEXT INIZIO */
+.mediaText {
+  /* border: 5px solid #000; */
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.mediaText figure,
+.mediaText section {
+  /* border: 5px solid #ff0000; */
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mediaText section {
+  align-items: flex-start;
+  padding: 25px;
+  gap: 15px;
+}
+
+.mediaText section button {
+  width: 150px;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.mediaText figure img {
+  width: 100%;
+}
+/* PRIMI MEDIATEXT MEDIA Q */
+@media screen and (width<=992px) {
+  body {
+    background-color: blue;
+  }
+  .mediaText figure,
+  .mediaText section {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+  /* #mt2 figure {
+    order: -1;
+  } */
+
+  #mt2 {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (width<=768px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media screen and (width<=600px) {
+  body {
+    background-color: green;
+  }
+}
+/* PRIMI MEDIATEXT FINE */
