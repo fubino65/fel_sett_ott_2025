@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.8em 0 1em 0;
+}
+
+#btn1 {
+  width: 150px;
+  height: 40px;
+  /* padding: 10px 20px; */
+  background-color: coral;
+  border: 2px solid coral;
+  color: #fff;
+  transition-property: border-radius;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.96, 1.03);
+
+  /* transition-property: background-color;
+  transition-duration: 3s;
+  transition-timing-function: ease; */
+  /* transition-delay: 0.5s; */
+
+  /* sintassi shorthand prop durata timing delay (opzionale) */
+  transition: all 3s ease 1s;
+  /* N.B. se scrivo la transizione nella pseudoclasse verrà applicata solo quando vengono eseguite le regole della pseudoclasse (in questo caso quando passo con il mouse sopra l'elemento) ma non in uscita (in questo caso quando  il mouse abbandona l'elemento). Pertanto è bene che la transizione sia scritta nello stile dell'elemento*/
+}
+
+#btn1:hover {
+  border-radius: 15px;
+  background-color: #fff;
+  color: coral;
+  font-weight: 600;
+}
+
+#box1 {
+  border: 1px solid #000;
+  height: 100px;
+  width: 150px;
+  background-image: url(https://html5book.ru/wp-content/uploads/2015/01/border-flower.png);
+  background-repeat: no-repeat;
+  background-size: contain; /*in questo caso non ci conviene mettere cover*/
+  background-position: bottom;
+  transition: all 0.3s ease-in;
+}
+#box1:hover {
+  background-position: top;
+}
+.quadrato {
+  border: 1px solid #000;
+  --lato: 70px;
+  width: var(--lato);
+  height: var(--lato);
+  background-color: crimson;
+  transition: all 0.5s linear;
+}
+
+#box2:hover {
+  transform: translate(100px, 50px);
+  transform: translatey(80vw);
+  transform: translatex(-200px);
+  transform: translatex(80vw);
+}
+#box3:hover {
+  transform: rotateX(45deg);
+  transform: rotatey(45deg);
+  transform: rotate(90deg);
+  transform: rotate(360deg);
+}
+
+#box4:hover {
+  background-color: chocolate;
+  transform: scaleX(0.5);
+  transform: scaley(1.5);
+  transform: scale(1.2);
+}
+
+#box5:hover {
+  background-color: rgb(69, 30, 210);
+  transform: skewX(25deg);
+  transform: skewY(25deg);
+  transform: skew(70deg, 30deg);
+}
+
+#box6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box6 span {
+  color: #fff;
+  font-size: 12px;
+}
+
+#box6:hover span {
+  /*sparisce la scritta: in questo caso è indifferente usare display o visibility*/
+  display: none;
+  visibility: hidden;
+}
+
+#box6:hover {
+  background-color: rgb(69, 30, 210);
+  transform: translate(50px, 50px) rotate(360deg) scale(1.2);
+}
+
+/* Come nascondere un elemento html */
+#display {
+  display: none; /*sparisce l'elemento e anche lo spazio che occupa*/
+  display: block;
+}
+
+#visibility {
+  visibility: hidden; /*sparisce l'elemento e ma viene lasciato visibile lo spazio che occupa*/
+  visibility: visible;
+}
+
+#box7 {
+  animation-name: pippo;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes pippo {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  65% {
+    transform: translateY(-4%);
+  }
+  80% {
+    transform: translateY(4%);
+  }
+  95% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
