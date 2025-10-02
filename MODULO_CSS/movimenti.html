@@ -6,10 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Movimenti</title>
         <link rel="stylesheet" href="ASSETS/CSS/movimenti.css">
+
+        <!-- link a libreria animate.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+        <!-- link alla libreria javascript wow che permette di gestire lo scroll sulle animazioni -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+            integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
     <body>
-        <h1>Transizioni, trasformazioni, animazioni</h1>
+        <h1 class="animate__animated animate__slideInLeft">Transizioni, trasformazioni, animazioni
+        </h1>
         <ul>
             <li>
                 <h2>Transizioni</h2>
@@ -42,14 +51,16 @@
                 <div class="quadrato" id="box6"><span>SCRITTA</span></div>
             </li>
             <li>
-                <h2>Animazioni</h2>
+                <h2 class="animate__animated animate__slideInLeft wow">Animazioni</h2>
                 <div class="quadrato" id="box7"><span>SCRITTA</span></div>
                 <h2>esempi di animazioni</h2>
                 <a href="https://codepen.io/louisemoxy/pen/JYwLaJ">Scegli l'animazione che preferisci</a>
             </li>
         </ul>
 
-
+        <script>
+            new WOW().init();
+        </script>
     </body>
 
 </html>
