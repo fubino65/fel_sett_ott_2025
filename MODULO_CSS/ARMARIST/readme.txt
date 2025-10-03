@@ -1,0 +1,2 @@
+esercitazione armarist: minimo richiesto: header, primi due media text e footer. Tutto responsive solo per un breakpoint: 600px (o 576). Quando si sono terminate queste sezioni procedere con quella con le icone e i numeri gialli, servizi, contattaci. Se poi rimane tempo aggiungere quello che manca dando priorità a tutto ciò che non è mediatext
+L'hamburger menu non è necessario che sia funzionante
