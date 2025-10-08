@@ -209,3 +209,11 @@ console.log((num > 0 || num2 < 20) && num3 >= 10 && num3 <= 20);
 
 //guarda come cambia il risultato se tolgo le parentesi (o le sposto perchè il formattatore me le sposta sugli end)
 console.log(num > 0 || (num2 < 20 && num3 >= 10 && num3 <= 20));
+
+// 8.	Definisci una variabile che ha come valore il numero di partecipanti a una festa, un’altra variabile che ha come valore le bottiglie di birra che sono state acquistate e una terza che ha come valore  la capacita delle bottiglie. Stampa sulla console quanta birra può bere in media ciascun partecipante
+let partecipanti = 20;
+let numBottiglie = 70;
+let capacita = 0.6;
+let risultato = (numBottiglie * capacita) / partecipanti;
+console.log(`Ogni partecipante potrà bere in media ${risultato}l di birra.`);
+console.log('Ogni partecipante potrà bere in media ' + risultato + 'l di birra.');
