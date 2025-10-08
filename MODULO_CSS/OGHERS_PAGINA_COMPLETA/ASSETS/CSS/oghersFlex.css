@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.boxed {
+  padding: 0 250px;
+}
+
+.shadowed {
+  -webkit-box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2),
+    0 22px 27px -20px rgba(7, 10, 25, 0.2);
+  box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2),
+    0 22px 27px -20px rgba(7, 10, 25, 0.2);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  min-width: 1900;
+  color: var(--text-color);
+}
+
+header {
+  /* border: 2px solid red; */
+
+  /* margin-top: 40px;distanza dal bordo verso l'esterno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 250px;
+}
+
+header a,
+h1,
+h2,
+#evidenzaContainer .titolo,
+.titoloArt,
+#topFooter span {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header a {
+  text-decoration: none; /*eliminazione della sottolineatura*/
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+#logo {
+  /* height: 60px; */
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+}
+#logo a {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+/* header div,
+header nav {
+   border: 1px solid black;
+} */
+
+#menu a {
+  /* margin: 0 10px; */
+  font-weight: 700;
+}
+
+#menu a:hover {
+  color: var(--titoli--hover);
+}
+
+#icone a,
+#toTop {
+  background: var(--gradient-bkg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+#icone a {
+  width: 45px;
+  height: 45px;
+  /* overflow hidden necessario perchè altrimenti si vede una linea orizzontale alla partenza */
+  overflow: hidden;
+  position: relative;
+}
+#icone a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #000;
+  /* border-radius: 50%; eliminato perchè altrimenti il nero non sale piatto ma rotondo*/
+  transition: height 1s ease; /* Transizione lenta di */
+}
+
+#icone a:hover::before {
+  height: 100%;
+}
+
+/* Icona toTop */
+#toTop {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+}
+
+/* devo metterlo altrimenti l'icona viene coperta dall'animazione nera */
+#icone .fa-solid {
+  position: relative;
+  z-index: 20;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 20px;
+}
+/************ CONTENUTO **********/
+#containerPrincipale {
+  /* border: 2px solid red; */
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+}
+
+#containerSx {
+  /* border: 2px solid green; */
+  width: 65%;
+  height: 100%;
+}
+
+.articolo {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+#img1,
+#img3 {
+  background-image: url(../MEDIA/integratori-per-il-benessere-quotidiano.webp);
+}
+
+#img2,
+#img4 {
+  background-image: url(../MEDIA/A_close-up_of_fresh_mint_leaves_beside_a_steaming_.jpeg);
+}
+.articolo .img {
+  background-size: 200%;
+  background-position: center center;
+  border-radius: 10px;
+  height: 340px;
+  width: 340px;
+  cursor: pointer;
+}
+
+.articolo .info {
+  /* border: 1px solid fuchsia; */
+  flex-basis: 60%;
+}
+
+.metaInfo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 30px;
+}
+.metaInfo a {
+  text-decoration: none;
+  color: #002050;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.titoloArt {
+  width: 70%;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+.titoloArt:hover {
+  color: var(--titoli--hover);
+}
+.categoria {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+  display: inline;
+  background: var(--gradient-bkg);
+  border-radius: 3px;
+  color: #fff;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
+}
+
+.testoArt {
+  font-size: 17px;
+  color: #002050;
+  height: 30%;
+}
+
+.buttonArt {
+  padding: 15px 20px;
+  border: 2px solid var(--titoli--hover);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #002050;
+  border-radius: 5px;
+}
+
+.buttonArt:hover {
+  background: var(--gradient-bkg);
+  color: #fff;
+  .shadowed {
+    -webkit-box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2),
+      0 22px 27px -20px rgba(7, 10, 25, 0.2);
+    box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2),
+      0 22px 27px -20px rgba(7, 10, 25, 0.2);
+  }
+}
+
+/**************** CONTAINER DX *******************/
+#containerDx {
+  position: relative;
+  width: 35%;
+  border-radius: 7px;
+}
+
+#stickyContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding-left: 40px;
+  margin-bottom: 50px;
+}
+
+#containerDx form {
+  background-color: var(--background--color_secondary);
+  padding: 20px;
+  display: flex;
+  gap: 2px;
+}
+
+#containerDx form input {
+  height: 50px;
+  border-radius: 7px;
+  font-size: 17px;
+  color: black;
+}
+
+#containerDx form input[type="search"] {
+  padding-left: 10px;
+  flex-grow: 1;
+  border: 1px solid lightgray;
+  outline-color: lightgray;
+}
+
+#containerDx form input[type="submit"] {
+  padding: 0 35px;
+  background: var(--gradient-bkg);
+  color: #ffffff;
+  font-weight: bold;
+  border: 0px;
+  z-index: 20;
+}
+
+#containerDx form input[type="submit"]:hover {
+  background-color: #000000;
+  z-index: 30;
+}
+
+#categorieList {
+  margin-top: 20px;
+  background-color: var(--background--color_secondary);
+  padding: 20px;
+}
+
+#categorieList p {
+  padding: 15px 0;
+}
+
+#categorieList hr {
+  border: none;
+  border-top: 1px solid lightgray;
+}
+/************ ARTICOLI IN EVIDENZA **********/
+
+#evidenzaContainer {
+  /* border: 1px solid gray; */
+  border-radius: 10px;
+  background-color: var(--background--color_secondary);
+  padding: 20px;
+  margin-bottom: 50px;
+  /* position: relative; */
+}
+
+/* righetta sopra hr. Attenzione la maggior parte dei browser non accetta l'after e il before sull'hr */
+#evidenzaContainer .titolo {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 15px; /* spazio per la righetta */
+}
+
+#evidenzaContainer .titolo::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* posiziona sotto il titolo */
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-bkg);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+#evidenzaContainer hr {
+  margin-top: -8px; /* avvicina l'hr alla righetta per sovrapposizione */
+}
+
+#anteprimeContainer {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.anteprima {
+  border: 1px solid gray;
+  border-radius: 10px;
+  height: 200px;
+  flex-basis: 24%;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.anteprima::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    /* Direzione */ rgba(0, 0, 0, 0) 0%,
+    /* Colore iniziale */ rgba(0, 0, 0, 0) 50%,
+    /* Colore intermedio */ rgba(0, 0, 0, 1) 100% /* Colore finale */
+  );
+  border-radius: 8px;
+}
+
+.anteprima h2 {
+  align-self: flex-start;
+}
+.anteprima h3 {
+  height: 45px;
+  overflow: hidden;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.anteprima:hover {
+  transform: translateY(-10px);
+}
+.anteprima h3:hover {
+  color: var(--titoli--hover);
+  /* transform: scale(1.1); */
+}
+
+#prima {
+  background-image: url(../MEDIA/integratori-per-il-benessere-quotidiano.webp);
+}
+#seconda {
+  background-image: url(../MEDIA/Centered_Star_Anise_Blog_Image.jpg);
+}
+#terza {
+  background-image: url(../MEDIA/pilates-per-principianti.webp);
+}
+#quarta {
+  background-image: url(../MEDIA/A_close-up_of_fresh_mint_leaves_beside_a_steaming_.jpeg);
+}
+
+/*
+sfondo #FFFAF4
+    background: linear-gradient(90deg, #89216b 0%, #da4453 100%);
+    scritte hoveer #6F1C56
+*/
+
+/***************FOOTER **************/
+#topFooter {
+  background-color: #0c0c0c;
+  padding: 30px 0 50px 0;
+  color: #fff;
+}
+
+#topFooter span {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#bottomFooter div {
+  background-color: #000000;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+#bottomFooter p span {
+  margin-left: 15px;
+}
+/* CUSTOM PROPERTIES */
+:root {
+  --gradient-bkg: linear-gradient(90deg, #89216b 0%, #da4453 100%);
+  --titoli--hover: #6f1c56;
+  --background--color_secondary: #fffaf4;
+  --text-color: #002050;
+}
