@@ -120,7 +120,7 @@ if (numero1 > 0) {
 //2. Data una variabile voto e stampa sulla console il  livello dello studente (A, B, C, D). A, parte da 90 punti (compresi), B ne richiede minimo 80 e C minimo 70 punti, D minimo 60. Il massimo possibile è 100
 
 //SOLUZIONE 1 richiede un ordine preciso delle condizioni (partendo da 90 in giù)
-let voto = '83';
+let voto = '10';
 let livello = 'Il tuo livello è ';
 if (!+voto || voto < 0 || voto > 100) {
   livello = 'livello non valutabile';
@@ -138,9 +138,9 @@ if (!+voto || voto < 0 || voto > 100) {
 console.log(livello);
 
 // SOLUZIONE 2 CON prompt e valutazione più puntuale dei voti
-// let voto = prompt('Inserisci un voto: ');
+//voto = prompt('Inserisci un voto: ');
 
-if (voto >= 90) {
+if (voto >= 90 && voto <= 100) {
   console.log('Il voto è A');
 } else if (voto >= 80 && voto < 90) {
   console.log('Il voto è B');
@@ -154,15 +154,16 @@ if (voto >= 90) {
   console.log('Si prega di inserire una votazione valida da 0 a 100.');
 }
 
-//3. Dichiara una variabile nome. Se nome è uguale a “Maria” o “Stefania” o “Sanem” stampare sulla console “donna”, se nome uguale a “Mario” o “Stefano” o “Fulvio” stampare sulla console “uomo”, in tutti gli altri casi “genere non rilevato”;
+//3. Dichiara una variabile nome. Se nome è uguale a “Maria” o “Stefania” o “Sanem” stampare sulla console “responsabile pulizie”, se nome uguale a “Mario” o “Stefano” o “Fulvio” stampare sulla console “responsabile impianti”, in tutti gli altri casi “non è un nostro dipendente”;
+nome = 'pippo';
 
 let risultato = '';
 if (nome == 'Maria' || nome == 'Stefania' || nome == 'Sanem') {
-  risultato = 'donna';
+  risultato = 'responsabile pulizie';
 } else if (nome == 'Mario' || nome == 'Stefano' || nome == 'Fulvio') {
-  risultato = 'uomo';
+  risultato = 'responsabile impianti';
 } else {
-  risultato = 'genere non rilevato';
+  risultato = 'non è un nostro dipendente';
 }
 
 console.log(risultato);
