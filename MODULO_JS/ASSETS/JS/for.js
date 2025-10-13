@@ -200,3 +200,108 @@ for (let i = 0, indiceRossi = 0, indiceBianchi = 0; i < studenti.length; i++) {
 
 console.log('Studenti del prof. Rossi:', profRossi);
 console.log('Studenti del prof. Bianchi:', profBianchi);
+
+//**********  FOR OF (SOLO PER ARRAY O OGGETTI ITERABILI) */
+//ripeto l'esempio delle regioni con il ciclo for of
+result = 'le regioni italiane sono:';
+for (let regione of regioni) {
+  result += regione + ' ';
+  console.log(result);
+}
+console.log(result);
+
+//voglio conoscere la somma dei nuneri del seguente array
+numeri = [6, 4, 8, 1, 0, 55, 7];
+somma = 0;
+for (const numero of numeri) {
+  somma += numero;
+}
+console.log(somma);
+
+let frutti = ['mela', 'pera', 'uva', 'castagna', 'mandarino'];
+
+//soluzione con for tradizionale
+for (let i = 0; i < frutti.length; i++) {
+  const element = frutti[i];
+  console.log(element);
+}
+
+//soluzione con for of. Poichè il for of non rende disponibile l'indice se ne avessi bisogno posso dichiarare una variabile esterna (in questo caso counter) e usarla all'interno del ciclo ricordandosi di modificarla (++,--,...)
+let counter = 1;
+for (let elemento of frutti) {
+  console.log(counter + ': ' + elemento);
+  counter++;
+}
+
+//ESERCIZI
+//1. data una stringa stampa ogni carattere della stessa (la stringa è equiparabile in lettura a un array di caratteri)
+let parola = 'anagramma';
+// parola = ["a", "n", "a", "g", ...]
+for (const carattere of parola) {
+  console.log(carattere);
+}
+
+//2. dato un array di numeri determinare il valore massimo
+
+//voglio conoscere la somma dei numeri del seguente array
+let max = 0;
+numeri = [6, 4, 8, 1, 0, 55, 7];
+for (const num of numeri) {
+  if (num > max) {
+    max = num;
+  }
+}
+console.log(`Il valore massimo è ${max}`);
+
+//3. data una stringa stamparla al contrario guida -> adiug
+parola = 'periodo';
+let stringaReversed = '';
+for (let car of parola) {
+  stringaReversed = car + stringaReversed;
+  console.log(car);
+}
+console.log(`${parola} al contrario diventa ${stringaReversed}`);
+
+//soluzione con il for classico
+stringaReversed = '';
+for (let index = parola.length - 1; index >= 0; index--) {
+  const element = parola[index];
+  stringaReversed += element;
+  console.log(stringaReversed);
+}
+console.log(`${parola} al contrario diventa ${stringaReversed}`);
+
+//COME USCIRE DA UN CICLO (VALE PER TUTTI I CICLI) -> BREAK
+//dato un array di numeri stampa tutti i numeri a meno che vengano trovati i numeri 4 o 7. In questo caso stampiamo "errore";
+
+numeri = [6, 5, 8, 1, 4, 55, 77];
+result = '';
+for (const numero of numeri) {
+  if (numero == 4 || numero == 7) {
+    result = 'errore';
+    break;
+  }
+  result += numero + ' ';
+}
+
+console.log(result);
+
+//dato un array di numeri stampa tutti i numeri tranne  4 o 7.
+
+numeri = [6, 5, 8, 1, 4, 55, 7];
+result = '';
+
+for (const numero of numeri) {
+  if (numero == 4 || numero == 7) {
+    continue;
+  }
+  console.log(numero);
+}
+
+//sarebbe lo stesso scrivere il codice come segue
+
+for (const numero of numeri) {
+  if (numero != 4 && numero != 7) {
+    console.log(numero);
+  }
+}
