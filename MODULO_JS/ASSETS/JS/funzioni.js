@@ -137,3 +137,80 @@ function concatenaArray2(arr, sep = ' ') {
 
 console.log(concatenaArray2(fiori, ', '));
 console.log(concatenaArray2(fiori, ' | '));
+
+//****************  ARROW FUNCTIONS ***************/
+// function dividi(num1, num2) {
+//   return num1 / num2;
+// }
+
+//riscrivo la function dividi in forma di arrow function
+const divisione = (num1, num2) => num1 / num2;
+console.log(divisione(10, 2));
+
+//ESERCIZI
+//1.Scrivi una arrow function che prenda due parametri, una parola e una lunghezza, e restituisca true se la parola è più lunga della lunghezza specificata, altrimenti restituisca false.
+const isPiuLunga = (parola, lungh) => parola.length > lungh;
+console.log(isPiuLunga('auto', 7));
+console.log(isPiuLunga('elefante', 7));
+console.log(isPiuLunga('elefante', 15));
+
+//2.Scrivi una arrow function che verifica se un array di numeri è in ordine crescente (ogni numero deve essere maggiore del precedente).
+// let nums = [1, 2, 2, 4, 5];
+// const isArrCrescente = arr => {
+//   console.log(1 > -Infinity);
+//   let confronto = -Infinity;
+//   for (let num of arr) {
+//     if (num > confronto) {
+//       confronto = num;
+//     } else {
+//       console.log("sono nell'if con num =" + num);
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isArrCrescente(nums));
+
+//TODO DA RIVEDERE
+
+const isArrCrescente2 = arr => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] >= arr[i + 1]) return false;
+  }
+  return true;
+};
+
+nums = [1, 2, 3, 4, 5];
+console.log(isArrCrescente2(nums));
+
+//SOLUZIONE 2 Inizia il ciclo da 1 e confronta l'elemento corrente con quello precedente. Nel caso di array vuoto non entra nel ciclo e quindi ritorna true
+const verificaCrescente = array => {
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] <= array[i - 1]) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(verificaCrescente([1, 2, 3, 4, 5, 6, 7]));
+console.log(verificaCrescente([1, 3, 2, 6, 5, 29, 15]));
+
+//soluzione daniela (non è stato fatto con l'array ma mette in evidenza il return implicito)
+let order = (a, b, c, d) => a < b && b < c && c < d;
+console.log(order(1, 2, 3, 4));
+console.log(order(1, 2, 1, 3, 4));
+
+//3.scrivi una arrow function che verifichi se una parola è palindroma (Stringa vuota è palindroma)
+
+const isPalindroma = parola => {
+  let stringaReversed = '';
+  for (let car of parola) {
+    stringaReversed = car + stringaReversed;
+  }
+  return parola == stringaReversed;
+};
+
+console.log(isPalindroma('anna'));
+console.log(isPalindroma('otto'));
+console.log(isPalindroma('geronimo'));
+console.log(isPalindroma(''));
