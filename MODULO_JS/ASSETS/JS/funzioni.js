@@ -155,21 +155,19 @@ console.log(isPiuLunga('elefante', 7));
 console.log(isPiuLunga('elefante', 15));
 
 //2.Scrivi una arrow function che verifica se un array di numeri è in ordine crescente (ogni numero deve essere maggiore del precedente).
-// let nums = [1, 2, 2, 4, 5];
-// const isArrCrescente = arr => {
-//   console.log(1 > -Infinity);
-//   let confronto = -Infinity;
-//   for (let num of arr) {
-//     if (num > confronto) {
-//       confronto = num;
-//     } else {
-//       console.log("sono nell'if con num =" + num);
-//       return false;
-//     }
-//   }
-//   return true;
-// };
-// console.log(isArrCrescente(nums));
+let nums = [1, 2, 3, 4, 5];
+const isArrCrescente = arr => {
+  let confronto = -Infinity;
+  for (let num of arr) {
+    if (num > confronto) {
+      confronto = num;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(isArrCrescente(nums));
 
 //TODO DA RIVEDERE
 
