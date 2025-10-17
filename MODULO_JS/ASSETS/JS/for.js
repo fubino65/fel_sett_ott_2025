@@ -123,16 +123,16 @@ console.log('media = ' + media);
 let studenti = [
   'Roberti',
   'Ferrari',
-  'Esposito',
+  'esposito',
   'Jianchi',
   'Ricci',
   'Conti',
-  'Kusso',
+  'kusso',
   'Costa',
-  'Rizzo',
+  'rizzo',
   'Fontana',
   'Moretti',
-  'Fabbri',
+  'fabbri',
   'Sanna',
   'Neri',
   'Costantini',
@@ -149,7 +149,8 @@ for (let i = 0; i < studenti.length; i++) {
   let primaLettera = studente[0];
 
   // if ((primaLettera >= 'A' && primaLettera <= 'J') || (primaLettera >= 'a' && primaLettera <= 'j')) {
-  if (primaLettera >= 'A' && primaLettera <= 'J') {
+  //if (primaLettera >= 'A' && primaLettera <= 'J') {
+  if (primaLettera.toUpperCase() >= 'A' && primaLettera.toUpperCase() <= 'J') {
     rossi[rossi.length] = studente; //la lunghezza di un array corrisponde anche al primo indice "libero" che possiamo utilizzare
   } else {
     bianchi[bianchi.length] = studente;
@@ -164,6 +165,19 @@ let profBianchi = [];
 
 let indiceRossi = 0;
 let indiceBianchi = 0;
+
+for (let i = 0; i < studenti.length; i++) {
+  let cognome = studenti[i];
+  let primaLettera = cognome[0];
+
+  if (primaLettera >= 'A' && primaLettera <= 'J') {
+    profRossi[indiceRossi] = cognome;
+    indiceRossi++;
+  } else {
+    profBianchi[indiceBianchi] = cognome;
+    indiceBianchi++;
+  }
+}
 
 for (let i = 0; i < studenti.length; i++) {
   let cognome = studenti[i];
