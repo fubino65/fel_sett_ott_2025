@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ordinamento Prodotti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="immagini/carrello.PNG" type="image/x-icon">
+</head>
+
+<body>
+    <main class="page">
+        <header class="hero">
+            <div class="badge">2</div>
+            <h1 class="hero-title">Ordinamento Lista Prodotti</h1>
+        </header>
+
+        <section class="card">
+            <h2 class="card-title"> Ordina Prodotti</h2>
+            <hr class="divider" />
+
+            <label class="label" for="prodotti"><strong>Inserisci i prodotti</strong></label>
+            <textarea id="prodotti" placeholder="Esempio: Latte - 1.50"></textarea>
+
+            <label class="label" for="ordina">Ordina per:</label>
+            <select id="ordina">
+                <option value="nome">Nome (A-Z)</option>
+                <option value="prezzo">Prezzo minore</option>
+                <option value="prezzo-decrescente">Prezzo maggiore</option>
+            </select>
+
+            <button id="ordina-btn" class="btn-primary">Ordina prodotti</button>
+
+            <div id="lista-ordinata" class="risultato-wrapper">
+                <div class="accent"></div>
+                <div class="risultato-content">
+                    <h3>Prodotti ordinati:</h3>
+                    <div id="lista-prodotti" class="lista">
+                        <em>Nessun prodotto inserito.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

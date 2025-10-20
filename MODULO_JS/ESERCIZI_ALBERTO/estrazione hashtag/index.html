@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Estrazione Hashtag</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="immagini/simbolo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <main class="page">
+        <header class="hero">
+            <div class="badge">1</div>
+            <h1 class="hero-title">Estrazione Hashtag</h1>
+        </header>
+        <section class="card">
+            <h2 class="card-title">Estrai gli Hashtag dal Testo</h2>
+            <hr class="divider" />
+
+            <label class="label" for="testo"><strong>Inserisci un testo con #hashtag</strong></label>
+            <textarea id="testo" placeholder="Scrivi qui..."></textarea>
+
+            <button id="estrai" class="btn-primary">Estrai Hashtag</button>
+            <div id="risultato-wrapper" class="risultato-wrapper nascosto">
+                <div class="accent"></div>
+                <div class="risultato-content">
+                    <div class="risultato-header">
+                        <h3>Hashtag trovati (<span id="count">0</span>):</h3>
+                        <button id="elimina" class="btn-clear">Elimina tutti</button>
+                    </div>
+                    <div id="lista" class="lista"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
