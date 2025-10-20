@@ -247,6 +247,30 @@ for (let elemento of frutti) {
   counter++;
 }
 
+//**********  FOR IN (SOLO PER OGGETTI) CICLA SU TUTTE LE PROPRIETA (COMPRESI I METODI) */
+let lampadina = {
+  accesa: false,
+  colore: 'bianco',
+  dimensioni: ['sm', 'l', 'xl'],
+  led: true,
+  accendi: function () {
+    this.accesa = true;
+  },
+  spegni: function () {
+    this.accesa = false;
+  },
+  getStato() {
+    //approccio più veloce per scrivere un metodo (nomeMetodo(){} invece che nomeMetodo: function (){})
+    console.log('La lampadina è ' + (lampadina.accesa ? ' accesa.' : ' spenta.'));
+  }
+};
+
+for (let prop in lampadina) {
+  if (typeof lampadina[prop] != 'function') {
+    console.log(`${prop}: ${lampadina[prop]}`);
+  }
+}
+
 //ESERCIZI
 //1. data una stringa stampa ogni carattere della stessa (la stringa è equiparabile in lettura a un array di caratteri)
 let parola = 'anagramma';
