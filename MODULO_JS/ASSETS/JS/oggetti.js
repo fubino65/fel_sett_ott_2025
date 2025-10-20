@@ -136,9 +136,17 @@ console.log(prova[1][1]);
 
 //risultato atteso: tipologia: trilocale, superficie: 70, vani: 3
 console.log(Object.entries(cod33));
-// let entries = Object.entries(cod33).filter (elementi => typeof elementi[1] != "function").join(": ").join(", ");
-
+//posso ottenere il risultato usando i metodi degli array
 let entries = Object.entries(cod33);
+console.log(
+  entries
+    .filter(elemento => typeof elemento[1] != 'function')
+    .map(elemento => elemento[0] + ': ' + elemento[1])
+    .join(', ')
+);
+
+//oppure ciclando
+
 for (let entry of entries) {
   if (typeof entry[1] != 'function') {
     console.log(entry.join(': '));
