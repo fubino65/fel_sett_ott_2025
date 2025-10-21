@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <script src="JS/quiz.js" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🎯 Quiz Builder con Tabella</h1>
+                <p>Crea domande e gestiscile in una tabella dinamica</p>
+            </div>
+
+            <!-- BUILDER SECTION -->
+            <div id="builderSection" class="card">
+                <h2 class="section-title">Aggiungi una Domanda</h2>
+
+                <div class="form-group">
+                    <label for="questionText">Domanda *</label>
+                    <textarea id="questionText" placeholder="Scrivi la domanda..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="correctAnswer">Risposta Corretta *</label>
+                    <input type="text" id="correctAnswer" placeholder="Inserisci la risposta corretta...">
+                </div>
+
+                <div class="form-group">
+                    <label>Risposte Sbagliate *</label>
+                    <div class="answers-grid">
+                        <div class="answer-input">
+                            <label>Sbagliata 1</label>
+                            <input type="text" id="wrongAnswer1" placeholder="Risposta sbagliata...">
+                        </div>
+                        <div class="answer-input">
+                            <label>Sbagliata 2</label>
+                            <input type="text" id="wrongAnswer2" placeholder="Risposta sbagliata...">
+                        </div>
+                        <div class="answer-input">
+                            <label>Sbagliata 3</label>
+                            <input type="text" id="wrongAnswer3" placeholder="Risposta sbagliata...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="difficulty">Difficoltà *</label>
+                    <select id="difficulty">
+                        <option value="">Seleziona difficoltà...</option>
+                        <option value="facile">Facile</option>
+                        <option value="medio">Medio</option>
+                        <option value="difficile">Difficile</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" id="addQuestionBtn">+ Aggiungi Domanda</button>
+                    <button class="btn-secondary" id="resetFormBtn">Pulisci Modulo</button>
+                </div>
+            </div>
+
+            <!-- TABELLA SECTION -->
+            <div id="tableSection" class="card">
+                <h2 class="section-title">Domande nel Database</h2>
+                <div id="tableContainer"></div>
+            </div>
+
+            <!-- QUIZ SECTION -->
+            <div id="quizSection" class="hidden quiz-mode card">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="question-number" id="questionCounter"></div>
+                <h2 id="questionDisplay" class="section-title"></h2>
+
+                <div class="options" id="optionsContainer"></div>
+
+                <div class="feedback-message" id="feedbackMessage"></div>
+
+                <div class="button-group" style="margin-top: 30px;">
+                    <button class="btn-primary" onclick="submitAnswer()" id="submitBtn">Verifica Risposta</button>
+                    <button class="btn-secondary" onclick="backToBuilder()">Torna al Builder</button>
+                </div>
+            </div>
+
+            <!-- RESULTS SECTION -->
+            <div id="resultsSection" class="hidden card">
+                <div class="results">
+                    <h2 class="section-title">Quiz Completato!</h2>
+                    <div class="score-display" id="scoreDisplay">0%</div>
+                    <div class="score-text" id="scoreText"></div>
+
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="score-item-value" id="correctCount">0</div>
+                            <div class="score-item-label">Corrette</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-item-value" id="incorrectCount">0</div>
+                            <div class="score-item-label">Sbagliate</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-item-value" id="totalCount">0</div>
+                            <div class="score-item-label">Totale</div>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="startQuiz()">Ripeti il Quiz</button>
+                        <button class="btn-secondary" onclick="backToBuilder()">Torna al Builder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PER EDIT -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <h2 style="margin-bottom: 20px; color: #333;">Modifica Domanda</h2>
+
+                <div class="form-group">
+                    <label for="editQuestionText">Domanda</label>
+                    <textarea id="editQuestionText"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="editCorrectAnswer">Risposta Corretta</label>
+                    <input type="text" id="editCorrectAnswer">
+                </div>
+
+                <div class="form-group">
+                    <label>Risposte Sbagliate</label>
+                    <div class="answers-grid">
+                        <div class="answer-input">
+                            <label>Sbagliata 1</label>
+                            <input type="text" id="editWrongAnswer1">
+                        </div>
+                        <div class="answer-input">
+                            <label>Sbagliata 2</label>
+                            <input type="text" id="editWrongAnswer2">
+                        </div>
+                        <div class="answer-input">
+                            <label>Sbagliata 3</label>
+                            <input type="text" id="editWrongAnswer3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editDifficulty">Difficoltà</label>
+                    <select id="editDifficulty">
+                        <option value="facile">Facile</option>
+                        <option value="medio">Medio</option>
+                        <option value="difficile">Difficile</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="saveEdit()">Salva Modifiche</button>
+                    <button class="btn-secondary" onclick="closeModal()">Annulla</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

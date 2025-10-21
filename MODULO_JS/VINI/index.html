@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catalogo Vini</title>
+        <link rel="stylesheet" href="ASSETS/CSS/style.css">
+        <script src="ASSETS/JS/wine-app.js" defer></script>
+    </head>
+
+    <body>
+        <section class="container">
+            <h1>🍷 Catalogo Vini</h1>
+            <form id="wineForm" class="wine-form" action="pippo.php" method="post">
+                <section class="form-row">
+                    <input type="text" id="nome" placeholder="Nome vino" class="toValidate">
+                    <span class="error"></span>
+                </section>
+                <section class="form-row">
+                    <input type="text" id="produttore" placeholder="Produttore">
+                    <span class="error"></span>
+                </section>
+                <section class="form-row">
+                    <input type="number" id="annata" placeholder="Annata" min="1950" max="2025" class="toValidate">
+                    <span class="error"></span>
+                </section>
+                <section class="form-row">
+                    <select id="tipo" class="toValidate">
+                        <option value="">Tipo</option>
+                        <option value="rosso">Rosso</option>
+                        <option value="bianco">Bianco</option>
+                        <option value="rosato">Rosato</option>
+                        <option value="spumante">Spumante</option>
+                    </select>
+                    <span class="error"></span>
+                </section>
+                <section>
+                    <button type="submit">Aggiungi Vino</button>
+                    <button type="reset">Svuota campi</button>
+                </section>
+                <p id="esito" class="error"></p>
+            </form>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cerca vino...">
+            </div>
+
+            <div id="wineList" class="wine-list"></div>
+        </section>
+
+        <!-- <script src="ASSETS/JS/wine-app.js"></script> -->
+    </body>
+
+</html>
