@@ -12,3 +12,11 @@ body {
   color: red;
   font-size: small;
 }
+
+table,
+tr,
+th,
+td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
