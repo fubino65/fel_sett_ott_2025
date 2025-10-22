@@ -20,3 +20,7 @@ td {
   border: 1px solid #000;
   border-collapse: collapse;
 }
+
+table tbody td img {
+  height: 80px;
+}
