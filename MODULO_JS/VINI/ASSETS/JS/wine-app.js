@@ -80,24 +80,53 @@ form.addEventListener('submit', e => {
 
         let reader = new FileReader();
 
+        reader.onloadstart = function () {
+          console.log('Lettura iniziata...');
+        };
+
+        reader.onprogress = function (e) {
+          console.log('Progresso:', e.loaded, '/', e.total);
+        };
+
         reader.onload = function (event) {
           console.log('✅ ONLOAD ESEGUITO!');
           console.log('Lunghezza base64:', event.target.result.length);
           vino.immagine = event.target.result;
-          //  console.log('prima di vini.push vino = ', vino);
+          console.log('vino.immagine = ', vino.immagine);
+          console.log('prima di vini.push vino = ', vino);
           vini.push(vino);
           //aggiungo l'array nel localStorage
           console.log(JSON.stringify(vini));
           localStorage.setItem(VINILS, JSON.stringify(vini));
           //aggiungo una riga nella tabella
           popolaRigaTabella(vino);
-          //svuoto il form e metto il focus sul primo campo
-          form.reset();
-          form.nome.focus();
-        }; //evento onload dell'immagine
-      } //if imgFile
-    } //else caso in cui il vino non è già censito
-  } //is valid
+        };
+
+        reader.onerror = function (error) {
+          console.error('❌ ERRORE:', error);
+          alert('Errore durante la lettura del file');
+        };
+
+        reader.onloadend = function () {
+          console.log('Lettura terminata');
+        };
+
+        console.log('Chiamata readAsDataURL...');
+        reader.readAsDataURL(imgFile);
+      }
+      // console.log('prima di vini.push vino = ', vino);
+      // vini.push(vino);
+      // //aggiungo l'array nel localStorage
+      // console.log(JSON.stringify(vini));
+      // localStorage.setItem(VINILS, JSON.stringify(vini));
+
+      //svuoto il form e metto il focus sul primo campo
+      form.reset();
+      form.nome.focus();
+
+      console.log(JSON.stringify(vini));
+    }
+  }
 }); //fine listener submit
 
 //ALTRE FUNZIONI
@@ -121,6 +150,7 @@ function popolaRigaTabella(vino) {
     console.log('entro nell if');
     img = document.createElement('img');
     img.src = vino.immagine;
+
     console.log(img);
   }
   console.log('img = ' + img);
