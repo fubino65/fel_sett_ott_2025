@@ -59,27 +59,45 @@ form.addEventListener('submit', e => {
     } else {
       //caso in cui il vino non sia già censito
       //creo un oggetto di tipo vino e lo aggiungo all'array dei vini.
+
       let vino = new Vino(
         form.nome.value.trim().toUpperCase(),
         form.produttore.value.trim().toUpperCase(),
         form.annata.value.trim().toUpperCase(),
         form.tipo.value.trim().toUpperCase()
       );
-      vini.push(vino);
 
-      //aggiungo l'array nel localStorage
-      localStorage.setItem(VINILS, JSON.stringify(vini));
+      let imgFile = form.immagine.files[0];
+      console.log('imgfile', imgFile);
 
-      //svuoto il form e metto il focus sul primo campo
-      form.reset();
-      form.nome.focus();
+      let reader = new FileReader();
+      if (imgFile) {
+        console.log('Dettagli file:', {
+          nome: imgFile.name,
+          tipo: imgFile.type,
+          dimensione: imgFile.size + ' bytes'
+        });
 
-      console.log(JSON.stringify(vini));
+        let reader = new FileReader();
 
-      //aggiungo una riga nella tabella
-      popolaRigaTabella(vino);
-    }
-  }
+        reader.onload = function (event) {
+          console.log('✅ ONLOAD ESEGUITO!');
+          console.log('Lunghezza base64:', event.target.result.length);
+          vino.immagine = event.target.result;
+          //  console.log('prima di vini.push vino = ', vino);
+          vini.push(vino);
+          //aggiungo l'array nel localStorage
+          console.log(JSON.stringify(vini));
+          localStorage.setItem(VINILS, JSON.stringify(vini));
+          //aggiungo una riga nella tabella
+          popolaRigaTabella(vino);
+          //svuoto il form e metto il focus sul primo campo
+          form.reset();
+          form.nome.focus();
+        }; //evento onload dell'immagine
+      } //if imgFile
+    } //else caso in cui il vino non è già censito
+  } //is valid
 }); //fine listener submit
 
 //ALTRE FUNZIONI
@@ -98,12 +116,22 @@ function popolaRigaTabella(vino) {
   riga.insertCell().innerText = vino.produttore;
   riga.insertCell().innerText = vino.anno;
   riga.insertCell().innerText = vino.tipo;
+  let img = null;
+  if (vino.immagine) {
+    console.log('entro nell if');
+    img = document.createElement('img');
+    img.src = vino.immagine;
+    console.log(img);
+  }
+  console.log('img = ' + img);
+  img ? riga.insertCell().appendChild(img) : (riga.insertCell().innerText = '');
 }
 
 //COSTRUTTORE OGGETTO VINO
-function Vino(nome, produttore, anno, tipo) {
+function Vino(nome, produttore, anno, tipo, img) {
   this.nome = nome;
   this.produttore = produttore;
   this.anno = anno;
   this.tipo = tipo;
+  this.immagine = img;
 }
