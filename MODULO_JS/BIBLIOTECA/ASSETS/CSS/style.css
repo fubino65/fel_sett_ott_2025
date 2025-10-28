@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+form section {
+  padding: 7px 15px;
+}
+
+.error {
+  color: red;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+table img {
+  height: 10px;
+}

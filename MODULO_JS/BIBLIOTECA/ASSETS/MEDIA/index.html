@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestione Libri TF</title>
+        <link rel="shortcut icon" href="ASSETS/MEDIA/favicon2.jpg" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="stylesheet" href="ASSETS/CSS/style.css">
+        <!-- <script src="ASSETS/JS/main.js" defer></script> -->
+    </head>
+
+    <body>
+        <h1>TF BOOKS</h1>
+        <!-- campi: titolo* autore* codice*lung genere -->
+        <form>
+            <section class="formRow">
+                <label for="titolo">Titolo*:</label>
+                <input type="text" name="titolo" id="titolo" autofocus class="toValidate">
+                <span class="error"></span>
+            </section>
+            <section class="formRow">
+                <label for="autore">Autore*:</label>
+                <input type="text" name="autore" id="autore" class="toValidate">
+                <span class="error"></span>
+            </section>
+            <section class="formRow">
+                <label for="codice">Codice*:</label>
+                <input type="text" name="codice" id="codice" class="toValidate">
+                <span class="error"></span>
+            </section>
+            <section class="formRow">
+                <label for="genere">Genere:</label>
+                <select name="genere" id="genere">
+                    <option value="">Seleziona un genere</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Armony">Armony</option>
+                    <option value="Non fiction">Non fiction</option>
+                    <option value="Giallo">Giallo</option>
+                </select>
+                <span class="error"></span>
+            </section>
+            <section>
+                <input type="submit" value="Registra">
+                <input type="reset" value="Svuota i campi">
+                <button type="button" id="deleteAll">Cancella Tabella</button>
+            </section>
+        </form>
+        <p id="esito" class="error"></p>
+        <table>
+            <caption class="caption-top bg-primary">Libri TF BOOKS</caption>
+            <tr class="bg-danger">
+                <th>Titolo</th>
+                <th>Autore</th>
+                <th>Codice</th>
+                <th>Genere</th>
+            </tr>
+        </table>
+        <!-- FINE DEL CODICE -->
+        <script src="ASSETS/JS/main.js"></script>
+    </body>
+
+</html>
