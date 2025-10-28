@@ -24,6 +24,29 @@ for (const vino of vini) {
 }
 
 //GESTIONE EVENTI
+for (const campo of campiDaValidare) {
+  campo.addEventListener(
+    'blur',
+    () => console.log('evento blur intercettato')
+    // validaCampo(campo)
+  );
+}
+
+// form.addEventListener('change', e => {
+//   if (e.target.classList.contains('toValidate')) {
+//     console.log('change intercettato');
+//     //e.target = elemento html del form che ha scatenato l'evento
+//     validaCampo(e.target);
+//   }
+// });
+
+form.deleteAll.addEventListener('click', () => {
+  if (confirm('Sei sicuro di voler eliminare tutti i dati?')) {
+    vini = [];
+    localStorage.setItem(VINILS, null);
+    tabella.innerText = '';
+  }
+});
 form.addEventListener('submit', e => {
   e.preventDefault(); //mette in pausa il richiamo della action. Necessario per poter eseguire la validazione dei campi.
 
