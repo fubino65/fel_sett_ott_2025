@@ -8,6 +8,7 @@ console.log(form.nome);
 const campiDaValidare = document.querySelectorAll('.toValidate');
 const esitoP = document.getElementById('esito');
 const tabella = document.querySelector('#wineTable tbody');
+const errors = document.querySelectorAll('.error');
 
 //altre variabili
 let valid = true;
@@ -25,11 +26,7 @@ for (const vino of vini) {
 
 //GESTIONE EVENTI
 for (const campo of campiDaValidare) {
-  campo.addEventListener(
-    'blur',
-    () => console.log('evento blur intercettato')
-    // validaCampo(campo)
-  );
+  campo.addEventListener('change', () => validaCampo(campo));
 }
 
 // form.addEventListener('change', e => {
@@ -41,12 +38,16 @@ for (const campo of campiDaValidare) {
 // });
 
 form.deleteAll.addEventListener('click', () => {
+  errorsReset();
   if (confirm('Sei sicuro di voler eliminare tutti i dati?')) {
     vini = [];
     localStorage.setItem(VINILS, null);
     tabella.innerText = '';
   }
 });
+
+form.addEventListener('reset', () => errorsReset());
+
 form.addEventListener('submit', e => {
   e.preventDefault(); //mette in pausa il richiamo della action. Necessario per poter eseguire la validazione dei campi.
 
@@ -178,6 +179,12 @@ function popolaRigaTabella(vino) {
   }
   console.log('img = ' + img);
   img ? riga.insertCell().appendChild(img) : (riga.insertCell().innerText = '');
+}
+
+function errorsReset() {
+  for (const error of errors) {
+    error.innerText = '';
+  }
 }
 
 //COSTRUTTORE OGGETTO VINO
