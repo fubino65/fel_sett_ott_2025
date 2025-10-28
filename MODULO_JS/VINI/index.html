@@ -37,19 +37,23 @@
                     <span class="error"></span>
                 </section>
                 <section class="form-row">
-                    <input type="file" accept="image/*" id="immagine" placeholder="Scegli un'immagine"
-                        class="toValidate">
+                    <!-- <label for="file-input" class="custom-button">
+                        Associa un'immagine
+                    </label> -->
+                    <input type="file" id="immagine" accept="image/*" class="toValidate">
+
                     <span class="error"></span>
                 </section>
                 <section>
                     <button type="submit">Aggiungi Vino</button>
                     <button type="reset">Svuota campi</button>
+                    <button type="button" id="deleteAll">Cancella dati</button>
                 </section>
                 <p id="esito" class="error"></p>
             </form>
-            <div class="search-bar">
+            <!-- <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Cerca vino...">
-            </div>
+            </div> -->
 
             <table id="wineTable" class="wine-list">
                 <caption>Vini censiti</caption>
